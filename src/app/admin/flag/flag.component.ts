@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlagService } from './flag.service';
 
 @Component({
   selector: 'app-flag',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flag.component.css']
 })
 export class FlagComponent implements OnInit {
+  public flag:String;
 
-  constructor() { }
+  constructor(private service: FlagService) { }
 
   ngOnInit(): void {
+    this.service.getFlag().subscribe((flag: String) => {
+      this.flag = flag
+    })
   }
 
 }

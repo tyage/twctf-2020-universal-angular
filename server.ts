@@ -29,13 +29,24 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  server.get('/admin-api/**', (req, res) => {
-    res.send("flag{flag}")
+  server.use('/admin-api/*', (req, res) => {
+    if (req.ip.match(/127\.0\.0\.1/)) {
+      res.json('hello admin, here is the flag: flag{xxxx}')
+    } else {
+      res.json(`your ip is ${req.ip}`)
+    }
    });
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    if (req.path.startsWith('/admin/')) {
+      return res.send('access prohibited!!!')
+    }
+    res.render(indexHtml, { req, url: '', providers: [
+      { provide: APP_BASE_HREF, useValue: req.baseUrl },
+      { provide: 'BASE_URL', useValue: 'http://localhost:4200/' + req.baseUrl },
+      { provide: 'origin', useValue: 'http://localhost:4200/' }
+    ] });
   });
 
   return server;
