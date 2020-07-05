@@ -31,7 +31,7 @@ export function app(): express.Express {
 
   server.use('/admin-api/*', (req, res) => {
     if (req.ip.match(/127\.0\.0\.1/)) {
-      res.json('hello admin, here is the flag: flag{xxxx}')
+      res.json(`hello admin, here is the flag: ${process.env.FLAG}`)
     } else {
       res.json(`your ip is ${req.ip}`)
     }
