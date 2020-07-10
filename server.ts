@@ -22,30 +22,27 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y'
   }));
 
-  server.use('/admin-api/*', (req, res) => {
+  server.get('/api/flag', (req, res) => {
     if (req.ip.match(/127\.0\.0\.1/)) {
       res.json(`hello admin, here is the flag: ${process.env.FLAG}`)
     } else {
-      res.json(`your ip is ${req.ip}`)
+      res.status(500).send('Access restricted!')
     }
-   });
+  });
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    if (req.path.startsWith('/admin/')) {
-      return res.send('access prohibited!!!')
+    if (process.env.FLAG && req.path.includes('admin')) {
+      res.status(500).send('admin page is disabled in production env')
     }
+
     res.render(indexHtml, { req, url: '', providers: [
-      { provide: APP_BASE_HREF, useValue: req.baseUrl },
-      { provide: 'BASE_URL', useValue: 'http://localhost:4200/' + req.baseUrl },
-      { provide: 'origin', useValue: 'http://localhost:4200/' }
+      { provide: APP_BASE_HREF, useValue: req.baseUrl }
     ] });
   });
 
