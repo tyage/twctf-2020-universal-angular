@@ -13,7 +13,7 @@ export class FlagService {
     // XXX: prefix is not required if this option is added https://github.com/angular/angular/pull/37539/files
     const {href, protocol, hostname, port} = this.platformLocation
     const urlPrefix = `${protocol}//${hostname}:${port}`
-    const url = new URL('/api/flag', urlPrefix)
+    const url = new URL('/api/test', urlPrefix)
     return this.http.get(url.toString())
   }
 }
