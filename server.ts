@@ -7,6 +7,7 @@ import { join } from 'path';
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
+import { INITIAL_CONFIG } from '@angular/platform-server';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -41,9 +42,13 @@ export function app(): express.Express {
       res.status(500).send('admin page is disabled in production env')
     }
 
-    res.render(indexHtml, { req, url: '', providers: [
-      { provide: APP_BASE_HREF, useValue: req.baseUrl }
-    ] });
+    res.render(indexHtml, {
+      req,
+      url: '',
+      providers: [
+        { provide: APP_BASE_HREF, useValue: req.baseUrl },
+      ]
+    });
   });
 
   return server;
