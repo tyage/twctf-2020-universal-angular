@@ -9,7 +9,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/htpasswd:/etc/nginx/htpasswd
   app:
-    build: ./
+    build: ./app
     environment:
       - FLAG=FLAG{xxxxx}
 
