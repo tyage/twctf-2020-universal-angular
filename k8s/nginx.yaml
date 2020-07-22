@@ -6,11 +6,14 @@ metadata:
   name: nginx
 spec:
   ports:
-  - port: 8080
+  - name: http
+    protocol: TCP
+    port: 8080
     targetPort: 8080
   selector:
     app: nginx
-  type: LoadBalancer
+  externalIPs:
+  - 10.174.0.9
 ---
 apiVersion: apps/v1
 kind: Deployment
