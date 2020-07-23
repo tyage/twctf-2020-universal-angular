@@ -5,15 +5,15 @@ metadata:
     app: nginx
   name: nginx
 spec:
+  type: NodePort
   ports:
   - name: http
     protocol: TCP
     port: 8080
     targetPort: 8080
+    nodePort: 30080
   selector:
     app: nginx
-  externalIPs:
-  - 10.174.0.9
 ---
 apiVersion: apps/v1
 kind: Deployment

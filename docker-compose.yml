@@ -2,12 +2,9 @@ version: '3'
 
 services:
   nginx:
-    image: nginx
+    build: ./nginx
     ports:
       - 8081:8080
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/htpasswd:/etc/nginx/htpasswd
   app:
     build: ./app
     environment:
