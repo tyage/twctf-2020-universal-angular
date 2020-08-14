@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlagComponent } from './test.component';
+import { FlagComponent } from './flag.component';
 
 describe('FlagComponent', () => {
   let component: FlagComponent;
