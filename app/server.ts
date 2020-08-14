@@ -30,7 +30,7 @@ export function app(): express.Express {
 
   server.get('/api/answer', (req, res) => {
     if (req.ip.match(/127\.0\.0\.1/)) {
-      res.json(`hello admin, here is the flag: ${process.env.FLAG}`)
+      res.json(`hello admin, this is the answer: ${process.env.FLAG}`)
     } else {
       res.status(500).send('Access restricted!')
     }
@@ -38,7 +38,7 @@ export function app(): express.Express {
 
   server.get('/api/true-answer', (req, res) => {
     if (req.ip.match(/127\.0\.0\.1/)) {
-      res.json(`hello admin, here is the flag: ${process.env.FLAG2}`)
+      res.json(`hello admin, this is true answer: ${process.env.FLAG2}`)
     } else {
       res.status(500).send('Access restricted!')
     }
