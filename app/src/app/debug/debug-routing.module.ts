@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlagComponent } from './flag/flag.component';
 
 const routes: Routes = [
-  { path: 'admin/flag', component: FlagComponent }
+  { path: 'debug/flag', component: FlagComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class DebugRoutingModule { }

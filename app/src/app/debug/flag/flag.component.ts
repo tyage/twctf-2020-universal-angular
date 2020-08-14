@@ -12,7 +12,7 @@ export class FlagComponent implements OnInit {
   constructor(private service: FlagService) { }
 
   ngOnInit(): void {
-    this.service.getFlag().subscribe((flag: String) => {
+    this.service.getAnswer().subscribe((flag: String) => {
       this.flag = flag
     })
   }

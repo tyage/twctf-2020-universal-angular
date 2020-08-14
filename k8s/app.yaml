@@ -31,6 +31,8 @@ spec:
       - env:
         - name: FLAG
           value: FLAG{xxxxx}
+        - name: FLAG2
+          value: FLAG{yyyyy}
         image: gcr.io/namatyage/twctf-universal-app
         name: app
         ports:
