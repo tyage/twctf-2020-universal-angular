@@ -11,6 +11,7 @@ WORKDIR /app
 COPY --from=buildContainer /app/package.json /app
 COPY --from=buildContainer /app/dist /app/dist
 
-EXPOSE 4000
+ENV PORT 80
+EXPOSE 80
 
 CMD ["npm", "run", "serve:ssr"]
