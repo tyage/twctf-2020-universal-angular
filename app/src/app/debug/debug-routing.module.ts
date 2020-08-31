@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FlagComponent } from './flag/flag.component';
+import { AnswerComponent } from './answer/answer.component';
 
 const routes: Routes = [
-  { path: 'debug/flag', component: FlagComponent }
+  { path: 'debug/answer', component: AnswerComponent }
 ];
 
 @NgModule({

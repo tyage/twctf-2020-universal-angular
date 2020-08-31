@@ -5,7 +5,7 @@ import { PlatformLocation } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
-export class FlagService {
+export class AnswerService {
 
   constructor(private http: HttpClient, private platformLocation: PlatformLocation) { }
 

@@ -47,7 +47,7 @@ export function app(): express.Express {
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     if (process.env.FLAG && req.path.includes('debug')) {
-      res.status(500).send('debug page is disabled in production env')
+      return res.status(500).send('debug page is disabled in production env')
     }
 
     res.render(indexHtml, {
