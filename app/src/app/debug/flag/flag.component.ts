@@ -7,7 +7,7 @@ import { FlagService } from './flag.service';
   styleUrls: ['./flag.component.css']
 })
 export class FlagComponent implements OnInit {
-  public flag:String;
+  public flag: String;
 
   constructor(private service: FlagService) { }
 

@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { DebugModule } from './debug/debug.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionComponent } from './question/question.component';
+import { AnswerComponent } from './answer/answer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    QuestionComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
