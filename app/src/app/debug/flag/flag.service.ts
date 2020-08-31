@@ -9,7 +9,7 @@ export class FlagService {
 
   constructor(private http: HttpClient, private platformLocation: PlatformLocation) { }
 
-  getFlag() {
-    return this.http.get('/api/test')
+  getAnswer() {
+    return this.http.get('/api/answer')
   }
 }

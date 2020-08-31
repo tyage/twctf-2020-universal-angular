@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { FlagService } from './flag.service';
 
-describe('FlagService', () => {
+describe('TestService', () => {
   let service: FlagService;
 
   beforeEach(() => {

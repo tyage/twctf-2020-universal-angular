@@ -28,9 +28,17 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  server.get('/api/flag', (req, res) => {
+  server.get('/api/answer', (req, res) => {
     if (req.ip.match(/127\.0\.0\.1/)) {
-      res.json(`hello admin, here is the flag: ${process.env.FLAG}`)
+      res.json(`hello admin, this is the answer: ${process.env.FLAG}`)
+    } else {
+      res.status(500).send('Access restricted!')
+    }
+  });
+
+  server.get('/api/true-answer', (req, res) => {
+    if (req.ip.match(/127\.0\.0\.1/)) {
+      res.json(`hello admin, this is true answer: ${process.env.FLAG2}`)
     } else {
       res.status(500).send('Access restricted!')
     }
@@ -38,8 +46,8 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    if (process.env.FLAG && req.path.includes('admin')) {
-      res.status(500).send('admin page is disabled in production env')
+    if (process.env.FLAG && req.path.includes('debug')) {
+      res.status(500).send('debug page is disabled in production env')
     }
 
     res.render(indexHtml, {

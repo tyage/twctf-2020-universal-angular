@@ -9,4 +9,5 @@ services:
     build: ./app
     environment:
       - FLAG=FLAG{xxxxx}
+      - FLAG2=FLAG{yyyyy}
 
