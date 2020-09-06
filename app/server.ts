@@ -29,11 +29,7 @@ export function app(): express.Express {
   }));
 
   server.get('/api/answer', (req, res) => {
-    if (req.ip.match(/127\.0\.0\.1/)) {
-      res.json(`hello admin, this is the answer: ${process.env.FLAG}`)
-    } else {
-      res.status(500).send('Access restricted!')
-    }
+    res.json('42')
   });
 
   server.get('/api/true-answer', (req, res) => {

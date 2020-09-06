@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AnswerService } from './answer.service';
 
 @Component({
   selector: 'app-answer',
@@ -7,22 +8,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./answer.component.css']
 })
 export class AnswerComponent implements OnInit {
-  public query: String
-  public answer = '42'
+  public query: string
+  public answer: string = '42'
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: AnswerService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.query = params['q']
     })
 
-    // TODO: fetch answer via API
-    /*
-    this.service.getAnswer().subscribe((answer: String) => {
+    // fetch answer via API
+    this.service.getAnswer().subscribe((answer: string) => {
+      console.log(answer)
       this.answer = answer
     })
-    */
   }
 
 }

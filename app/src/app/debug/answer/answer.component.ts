@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AnswerService } from './answer.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { AnswerService } from '../../answer/answer.service';
 
 @Component({
   selector: 'app-answer',
@@ -7,12 +9,17 @@ import { AnswerService } from './answer.service';
   styleUrls: ['./answer.component.css']
 })
 export class AnswerComponent implements OnInit {
-  public answer: String;
+  public answer: string = '42'
+  public flag: string;
 
-  constructor(private service: AnswerService) { }
+  constructor(private service: AnswerService, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit(): void {
-    this.service.getAnswer().subscribe((answer: String) => {
+    if (isPlatformServer(this.platformId)) {
+      this.flag = process?.env?.FLAG
+    }
+
+    this.service.getAnswer().subscribe((answer: string) => {
       this.answer = answer
     })
   }
