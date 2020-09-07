@@ -20,7 +20,6 @@ export class AnswerComponent implements OnInit {
 
     // fetch answer via API
     this.service.getAnswer().subscribe((answer: string) => {
-      console.log(answer)
       this.answer = answer
     })
   }
