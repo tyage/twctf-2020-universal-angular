@@ -23,5 +23,4 @@ export class AnswerComponent implements OnInit {
       this.answer = answer
     })
   }
-
 }

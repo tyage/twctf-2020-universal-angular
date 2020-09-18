@@ -1,5 +1,9 @@
-<p *ngIf="query === answer">Correct!</p>
-<p *ngIf="query !== answer">Incorrect...</p>
-<p>The answer is {{answer}}</p>
+<div class="cat"></div>
 
-<a href="/q">Back</a>
+<h1 *ngIf="query === answer">Correct!</h1>
+<h1 *ngIf="query !== answer">Incorrect...</h1>
+
+<p class="lead">The answer is</p>
+<p class="lead answer">{{answer}}</p>
+
+<p class="lead"><a href="/q">Back</a></p>
