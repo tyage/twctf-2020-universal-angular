@@ -6,12 +6,6 @@
 $ docker-compose up
 ```
 
-## Deploy
-
-```
-$ skaffold run
-```
-
 ## Note
 
 I created the app starting with the following commands.
