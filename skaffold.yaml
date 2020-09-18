@@ -2,9 +2,9 @@ apiVersion: skaffold/v2beta5
 kind: Config
 build:
   artifacts:
-  - image: gcr.io/namatyage/twctf-universal-app
+  - image: asia-northeast1-docker.pkg.dev/twctf-2020-chals/angular-universal/app
     context: ./app
-  - image: gcr.io/namatyage/twctf-universal-nginx
+  - image: asia-northeast1-docker.pkg.dev/twctf-2020-chals/angular-universal/nginx
     context: ./nginx
 deploy:
   kubectl:
