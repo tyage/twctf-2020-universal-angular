@@ -32,17 +32,9 @@ export function app(): express.Express {
     res.json('42')
   });
 
-  server.get('/api/true-answer', (req, res) => {
-    if (req.ip.match(/127\.0\.0\.1/)) {
-      res.json(`hello admin, this is true answer: ${process.env.FLAG2}`)
-    } else {
-      res.status(500).send('Access restricted!')
-    }
-  });
-
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    if (process.env.FLAG && req.path.includes('debug')) {
+    if (process.env.FLAG && req.path.includes('/debug')) {
       return res.status(500).send('debug page is disabled in production env')
     }
 
