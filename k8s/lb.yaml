@@ -9,6 +9,4 @@ spec:
     - port: 80
       targetPort: 8080
   type: LoadBalancer
-  loadBalancerSourceRanges:
-  - "160.16.205.124/32"
   externalTrafficPolicy: Local
