@@ -11,3 +11,4 @@ spec:
   type: LoadBalancer
   loadBalancerSourceRanges:
   - "160.16.205.124/32"
+  externalTrafficPolicy: Local
