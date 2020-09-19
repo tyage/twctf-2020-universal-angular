@@ -28,10 +28,6 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  server.get('/api/answer', (req, res) => {
-    res.json('42')
-  });
-
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     if (process.env.FLAG && req.path.includes('/debug')) {

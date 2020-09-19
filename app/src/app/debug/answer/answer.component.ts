@@ -19,9 +19,8 @@ export class AnswerComponent implements OnInit {
       this.flag = process?.env?.FLAG
     }
 
-    this.service.getAnswer().subscribe((answer: string) => {
-      this.answer = answer
-    })
+    // answer is always 42
+    this.answer = '42'
   }
 
 }

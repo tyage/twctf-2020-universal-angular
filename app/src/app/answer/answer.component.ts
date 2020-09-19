@@ -18,9 +18,7 @@ export class AnswerComponent implements OnInit {
       this.query = params['q']
     })
 
-    // fetch answer via API
-    this.service.getAnswer().subscribe((answer: string) => {
-      this.answer = answer
-    })
+    // answer is always 42
+    this.answer = '42'
   }
 }
