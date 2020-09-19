@@ -2,10 +2,12 @@ apiVersion: skaffold/v2beta5
 kind: Config
 build:
   artifacts:
-  - image: asia-northeast1-docker.pkg.dev/twctf-2020-chals/angular-universal/app
+  - image: asia-northeast2-docker.pkg.dev/twctf-2020-chals/angular-universal-v2/app
     context: ./app
-  - image: asia-northeast1-docker.pkg.dev/twctf-2020-chals/angular-universal/nginx
+  - image: asia-northeast2-docker.pkg.dev/twctf-2020-chals/angular-universal-v2/nginx
     context: ./nginx
+  - image: asia-northeast2-docker.pkg.dev/twctf-2020-chals/angular-universal-v2/apache
+    context: ./apache
 deploy:
   kubectl:
     manifests:

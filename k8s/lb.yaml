@@ -4,9 +4,12 @@ metadata:
   name: lb
 spec:
   selector:
-    app: nginx
+    app: apache
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
   type: LoadBalancer
   externalTrafficPolicy: Local
+  loadBalancerSourceRanges:
+  - "160.16.205.124/32"
+

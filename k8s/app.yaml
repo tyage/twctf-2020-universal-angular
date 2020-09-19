@@ -32,14 +32,9 @@ spec:
         - name: FLAG
           valueFrom:
             secretKeyRef:
-              name: flags
-              key: flag1
-        - name: FLAG2
-          valueFrom:
-            secretKeyRef:
-              name: flags
-              key: flag2
-        image: asia-northeast1-docker.pkg.dev/twctf-2020-chals/angular-universal/app:latest
+              name: universal-flag-v2
+              key: flag
+        image: asia-northeast2-docker.pkg.dev/twctf-2020-chals/angular-universal-v2/app:latest
         name: app
         ports:
         - containerPort: 80
