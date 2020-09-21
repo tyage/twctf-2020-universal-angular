@@ -1,4 +1,4 @@
-# Angular of another Universal in TokyoWesterns CTF 2020
+# Angular of another Universe in TokyoWesterns CTF 2020
 
 ## Local dev
 
