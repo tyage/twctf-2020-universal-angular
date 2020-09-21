@@ -1,6 +1,6 @@
-# Angular of the Universal in TokyoWesterns CTF 2020
+# Angular of the Universe in TokyoWesterns CTF 2020
 
-[Angular of another Universal](https://github.com/tyage/universal-angular/tree/v2)
+[Angular of another Universe](https://github.com/tyage/universal-angular/tree/v2)
 
 ## Local dev
 
